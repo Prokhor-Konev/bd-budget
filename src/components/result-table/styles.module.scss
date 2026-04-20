@@ -1,0 +1,24 @@
+.table {
+    flex: 1;
+    overflow: auto; // ✅ СКРОЛЛ ТОЛЬКО ТУТ
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+            position: sticky; // 🔥 фикс заголовка
+            top: 0;
+            z-index: 2;
+        }
+
+        th {
+            background: var(--grey);
+        }
+
+        th, td {
+            border: 1px solid var(--black);
+            padding: 8px;
+        }
+    }
+}

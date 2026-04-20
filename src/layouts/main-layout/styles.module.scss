@@ -1,0 +1,5 @@
+.main {
+    height: calc(100vh - 64px);
+    overflow: hidden; // 💥 УБИРАЕМ СКРОЛЛ СТРАНИЦЫ
+    display: flex;
+}

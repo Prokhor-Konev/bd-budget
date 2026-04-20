@@ -1,0 +1,117 @@
+.wrapper {
+    overflow: hidden;
+    background: #f8f9fa;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: #e9ecef;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.language {
+    font-size: 12px;
+    font-weight: 600;
+    color: #495057;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.copyButton {
+    color: #495057 !important;
+    padding: 4px 8px;
+    height: auto;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.05) !important;
+    }
+}
+
+// Подсветка синтаксиса
+:global {
+
+    .token.comment,
+    .token.block-comment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata {
+        color: #6a9955;
+        font-style: italic;
+    }
+
+    .token.punctuation {
+        color: #383a42;
+    }
+
+    .token.property,
+    .token.tag,
+    .token.boolean,
+    .token.number,
+    .token.function-name,
+    .token.constant,
+    .token.symbol,
+    .token.deleted {
+        color: #986801;
+    }
+
+    .token.selector,
+    .token.attr-name,
+    .token.string,
+    .token.char,
+    .token.function,
+    .token.builtin,
+    .token.inserted {
+        color: #50a14f;
+    }
+
+    .token.operator,
+    .token.entity,
+    .token.url,
+    .token.variable {
+        color: #4078f2;
+    }
+
+    .token.atrule,
+    .token.attr-value,
+    .token.keyword,
+    .token.class-name {
+        color: #a626a4;
+    }
+
+    .token.regex,
+    .token.important {
+        color: #e45649;
+    }
+
+    // SQL-specific
+    .language-sql {
+        .token.keyword {
+            color: #a626a4;
+            font-weight: 600;
+        }
+
+        .token.string {
+            color: #50a14f;
+        }
+
+        .token.number {
+            color: #986801;
+        }
+
+        .token.operator {
+            color: #4078f2;
+        }
+
+        .token.function {
+            color: #4078f2;
+        }
+
+        .token.comment {
+            color: #a0a1a7;
+            font-style: italic;
+        }
+    }
+}

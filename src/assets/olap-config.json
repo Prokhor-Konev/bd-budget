@@ -1,0 +1,216 @@
+[
+    {
+        "type": "custom",
+        "label": "Произвольный отчет",
+        "description": "Настройте фильтры и группировку самостоятельно",
+        "fields": {
+            "ministries": {
+                "show": true,
+                "multiple": true,
+                "required": false
+            },
+            "expenseItems": {
+                "show": true,
+                "multiple": true,
+                "required": false
+            },
+            "years": {
+                "show": true
+            },
+            "groupBy": {
+                "show": true
+            }
+        },
+        "defaultGroupBy": [
+            "ministry",
+            "expense_item",
+            "year"
+        ]
+    },
+    {
+        "type": "rollup_ministry",
+        "label": "Roll-up по министерствам",
+        "description": "Агрегация по всем министерствам",
+        "fields": {
+            "ministries": {
+                "show": false,
+                "multiple": true,
+                "required": false
+            },
+            "expenseItems": {
+                "show": false,
+                "multiple": true,
+                "required": false
+            },
+            "years": {
+                "show": false
+            },
+            "groupBy": {
+                "show": false
+            }
+        },
+        "defaultGroupBy": [
+            "ministry"
+        ]
+    },
+    {
+        "type": "rollup_expense",
+        "label": "Roll-up по статьям расходов",
+        "description": "Агрегация по всем статьям",
+        "fields": {
+            "ministries": {
+                "show": false,
+                "multiple": true,
+                "required": false
+            },
+            "expenseItems": {
+                "show": false,
+                "multiple": true,
+                "required": false
+            },
+            "years": {
+                "show": false
+            },
+            "groupBy": {
+                "show": false
+            }
+        },
+        "defaultGroupBy": [
+            "expense_item"
+        ]
+    },
+    {
+        "type": "rollup_year",
+        "label": "Roll-up по годам",
+        "description": "Агрегация по годам",
+        "fields": {
+            "ministries": {
+                "show": false,
+                "multiple": true,
+                "required": false
+            },
+            "expenseItems": {
+                "show": false,
+                "multiple": true,
+                "required": false
+            },
+            "years": {
+                "show": false
+            },
+            "groupBy": {
+                "show": false
+            }
+        },
+        "defaultGroupBy": [
+            "year"
+        ]
+    },
+    {
+        "type": "rollup_year_month",
+        "label": "Roll-up по годам и месяцам",
+        "description": "Детализация по времени",
+        "fields": {
+            "ministries": {
+                "show": false,
+                "multiple": true,
+                "required": false
+            },
+            "expenseItems": {
+                "show": false,
+                "multiple": true,
+                "required": false
+            },
+            "years": {
+                "show": false
+            },
+            "groupBy": {
+                "show": false
+            }
+        },
+        "defaultGroupBy": [
+            "year",
+            "month"
+        ]
+    },
+    {
+        "type": "slice_ministry",
+        "label": "Срез по министерству",
+        "description": "Детальный анализ одного министерства",
+        "fields": {
+            "ministries": {
+                "show": true,
+                "multiple": false,
+                "required": true
+            },
+            "expenseItems": {
+                "show": false,
+                "multiple": true,
+                "required": false
+            },
+            "years": {
+                "show": false
+            },
+            "groupBy": {
+                "show": false
+            }
+        },
+        "defaultGroupBy": [
+            "expense_item",
+            "year"
+        ]
+    },
+    {
+        "type": "slice_expense",
+        "label": "Срез по статье расходов",
+        "description": "Анализ конкретной статьи",
+        "fields": {
+            "ministries": {
+                "show": false,
+                "multiple": true,
+                "required": false
+            },
+            "expenseItems": {
+                "show": true,
+                "multiple": false,
+                "required": true
+            },
+            "years": {
+                "show": false
+            },
+            "groupBy": {
+                "show": false
+            }
+        },
+        "defaultGroupBy": [
+            "ministry",
+            "year"
+        ]
+    },
+    {
+        "type": "cube_ministry_expense",
+        "label": "Министерства × Статьи",
+        "description": "Сводка по министерствам и статьям",
+        "fields": {
+            "ministries": {
+                "show": false,
+                "multiple": true,
+                "required": false
+            },
+            "expenseItems": {
+                "show": false,
+                "multiple": true,
+                "required": false
+            },
+            "years": {
+                "show": false
+            },
+            "groupBy": {
+                "show": false
+            }
+        },
+        "defaultGroupBy": [
+            "ministry",
+            "expense_item"
+        ]
+    }
+]

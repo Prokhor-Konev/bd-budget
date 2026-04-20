@@ -1,0 +1,99 @@
+:root {
+    --sm: 12px;
+    --md: 16px;
+    --lg: 24px;
+
+    --black: #433E3F;
+    --grey: #f0f0f0;
+    --white: #FFFFFF;
+    --accent: #820933;
+    --danger: #FE5F55;
+    --success: #36A83C;
+    --font: "Montserrat", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--white);
+}
+
+* {
+    font-family: var(--font);
+    line-height: 1.2;
+    font-weight: 400;
+    font-size: var(--md);
+    box-sizing: border-box;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+}
+
+body,
+body p,
+h1,
+h2,
+h3,
+ul,
+span,
+ul li a {
+    font-family: var(--font);
+    line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+span {
+    margin-bottom: inherit;
+}
+
+*::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+}
+
+*::-webkit-scrollbar-track {
+    width: 2px;
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    width: 2px;
+    background-color: var(--accent);
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent);
+}
+
+*::-webkit-scrollbar-button {
+    opacity: 0;
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+}

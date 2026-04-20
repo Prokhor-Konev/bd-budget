@@ -1,0 +1,27 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 16px;
+    margin: 8px 0;
+    height: 100%;
+    overflow-y: auto;
+
+    .sidebar-item {
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: .2s linear all;
+        color: var(--black);
+
+        &:hover:not(.active) {
+            background: var(--grey);
+            color: var(--accent);
+        }
+
+        &.active {
+            background: var(--accent);
+            color: var(--white);
+        }
+    }
+}

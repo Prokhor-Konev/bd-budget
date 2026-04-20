@@ -1,0 +1,226 @@
+[
+    {
+        "id": 1,
+        "lab": 1,
+        "title": "Просмотр всех министерств",
+        "description": "Позволяет получить полный список всех министерств в системе.",
+        "query": "SELECT * FROM ministries;"
+    },
+    {
+        "id": 2,
+        "lab": 1,
+        "title": "Основная информация о министерствах",
+        "description": "Отображает ключевые данные о министерствах без лишних полей.",
+        "query": "SELECT name, minister, employees_count FROM ministries;"
+    },
+    {
+        "id": 3,
+        "lab": 1,
+        "title": "Министерства с переименованием полей",
+        "description": "Выводит список министерств с читаемыми названиями колонок.",
+        "query": "SELECT \n    name AS \"Министерство\", \n    minister AS \"Министр\", \n    employees_count AS \"Сотрудники\" \nFROM ministries;"
+    },
+    {
+        "id": 4,
+        "lab": 1,
+        "title": "Просмотр статей расходов",
+        "description": "Отображает все категории расходов государственного бюджета.",
+        "query": "SELECT * FROM expense_items;"
+    },
+    {
+        "id": 5,
+        "lab": 1,
+        "title": "Просмотр бюджетных записей",
+        "description": "Показывает распределение бюджета между министерствами и статьями расходов.",
+        "query": "SELECT * FROM ministries_budget;"
+    },
+    {
+        "id": 6,
+        "lab": 1,
+        "title": "Список всех таблиц базы данных",
+        "description": "Возвращает перечень всех таблиц в текущей базе данных.",
+        "query": "SELECT table_name \nFROM information_schema.tables \nWHERE table_schema = 'public';"
+    },
+    {
+        "id": 7,
+        "lab": 1,
+        "title": "Структура таблицы министерств",
+        "description": "Позволяет изучить структуру таблицы министерств.",
+        "query": "SELECT \n    column_name, \n    data_type, \n    is_nullable, \n    column_default \nFROM information_schema.columns \nWHERE table_name = 'ministries';"
+    },
+    {
+        "id": 8,
+        "lab": 2,
+        "title": "Поиск министерства по названию",
+        "description": "Позволяет найти конкретное министерство по его названию.",
+        "query": "SELECT * \nFROM ministries \nWHERE name = 'Министерство финансов';"
+    },
+    {
+        "id": 9,
+        "lab": 2,
+        "title": "Министерства с числом сотрудников выше порога",
+        "description": "Фильтрует министерства по количеству сотрудников.",
+        "query": "SELECT * \nFROM ministries \nWHERE employees_count > 1000;"
+    },
+    {
+        "id": 10,
+        "lab": 2,
+        "title": "Финансовые периоды по диапазону лет",
+        "description": "Отбирает бюджетные периоды за указанный временной промежуток.",
+        "query": "SELECT * \nFROM periods \nWHERE year BETWEEN 2020 AND 2025;"
+    },
+    {
+        "id": 11,
+        "lab": 2,
+        "title": "Поиск расходов по списку категорий",
+        "description": "Позволяет найти нужные статьи расходов по названию.",
+        "query": "SELECT * \nFROM expense_items \nWHERE name IN ('Зарплаты', 'Инфраструктура');"
+    },
+    {
+        "id": 12,
+        "lab": 2,
+        "title": "Поиск статей расходов по шаблону",
+        "description": "Находит статьи расходов по части названия.",
+        "query": "SELECT * \nFROM expense_items \nWHERE name LIKE 'Соц%';"
+    },
+    {
+        "id": 13,
+        "lab": 2,
+        "title": "Комбинированная фильтрация министерств",
+        "description": "Позволяет фильтровать министерства по нескольким условиям.",
+        "query": "SELECT * \nFROM ministries \nWHERE employees_count > 500 \n   OR name = 'Министерство образования';"
+    },
+    {
+        "id": 14,
+        "lab": 2,
+        "title": "Сортировка министерств по названию",
+        "description": "Упорядочивает список министерств по алфавиту.",
+        "query": "SELECT * \nFROM ministries \nORDER BY name;"
+    },
+    {
+        "id": 15,
+        "lab": 2,
+        "title": "Сортировка по числу сотрудников",
+        "description": "Показывает крупнейшие министерства по численности персонала.",
+        "query": "SELECT * \nFROM ministries \nORDER BY employees_count DESC;"
+    },
+    {
+        "id": 16,
+        "lab": 2,
+        "title": "Многоуровневая сортировка",
+        "description": "Сортирует министерства по названию и числу сотрудников.",
+        "query": "SELECT * \nFROM ministries \nORDER BY name, employees_count;"
+    },
+    {
+        "id": 17,
+        "lab": 2,
+        "title": "Ограничение списка министерств",
+        "description": "Выводит только первые несколько министерств.",
+        "query": "SELECT * \nFROM ministries \nORDER BY name \nLIMIT 5;"
+    },
+    {
+        "id": 18,
+        "lab": 2,
+        "title": "Постраничный вывод данных",
+        "description": "Пропускает часть записей для реализации пагинации.",
+        "query": "SELECT * \nFROM ministries \nORDER BY name \nLIMIT 5 \nOFFSET 5;"
+    },
+    {
+        "id": 19,
+        "lab": 2,
+        "title": "Количество министерств",
+        "description": "Подсчитывает общее количество министерств.",
+        "query": "SELECT COUNT(*) AS \"Всего министерств\" \nFROM ministries;"
+    },
+    {
+        "id": 20,
+        "lab": 2,
+        "title": "Средние фактические расходы",
+        "description": "Вычисляет средние реальные затраты по всем бюджетным записям.",
+        "query": "SELECT AVG(actual_expenses) AS \"Средние расходы\" \nFROM ministries_budget;"
+    },
+    {
+        "id": 21,
+        "lab": 2,
+        "title": "Минимальные и максимальные расходы",
+        "description": "Показывает крайние значения фактических расходов.",
+        "query": "SELECT \n    MIN(actual_expenses) AS \"Минимум\", \n    MAX(actual_expenses) AS \"Максимум\" \nFROM ministries_budget;"
+    },
+    {
+        "id": 22,
+        "lab": 2,
+        "title": "Расходы по статьям бюджета",
+        "description": "Считает количество бюджетных записей по каждой статье расходов.",
+        "query": "SELECT \n    e.name AS \"Статья расходов\", \n    COUNT(*) AS \"Количество записей\" \nFROM ministries_budget mb \nJOIN expense_items e ON mb.expense_item_id = e.id \nGROUP BY e.id, e.name \nORDER BY \"Количество записей\" DESC;"
+    },
+    {
+        "id": 23,
+        "lab": 2,
+        "title": "Популярные статьи расходов",
+        "description": "Определяет наиболее используемые статьи бюджета.",
+        "query": "SELECT \n    e.name AS \"Статья расходов\", \n    COUNT(*) AS \"Количество\" \nFROM ministries_budget mb \nJOIN expense_items e ON mb.expense_item_id = e.id \nGROUP BY e.id, e.name \nHAVING COUNT(*) > 1 \nORDER BY \"Количество\" DESC;"
+    },
+    {
+        "id": 24,
+        "lab": 2,
+        "title": "Бюджет министерств с детализацией",
+        "description": "Объединяет данные министерств, расходов и бюджетных записей.",
+        "query": "SELECT \n    m.name AS \"Министерство\", \n    e.name AS \"Статья расходов\", \n    mb.planned_expenses AS \"План\", \n    mb.actual_expenses AS \"Факт\" \nFROM ministries m \nINNER JOIN ministries_budget mb ON m.id = mb.ministry_id \nINNER JOIN expense_items e ON mb.expense_item_id = e.id \nORDER BY m.name, e.name;"
+    },
+    {
+        "id": 25,
+        "lab": 2,
+        "title": "Все министерства с бюджетом",
+        "description": "Показывает все министерства, включая те, у которых нет бюджета.",
+        "query": "SELECT \n    m.name AS \"Министерство\", \n    e.name AS \"Статья расходов\", \n    mb.actual_expenses AS \"Фактические расходы\" \nFROM ministries m \nLEFT JOIN ministries_budget mb ON m.id = mb.ministry_id \nLEFT JOIN expense_items e ON mb.expense_item_id = e.id \nORDER BY m.name;"
+    },
+    {
+        "id": 26,
+        "lab": 2,
+        "title": "Министерства с конкретной статьей расходов",
+        "description": "Находит министерства, использующие определённую статью бюджета.",
+        "query": "SELECT * \nFROM ministries \nWHERE id IN (\n    SELECT ministry_id \n    FROM ministries_budget \n    WHERE expense_item_id = (\n        SELECT id \n        FROM expense_items \n        WHERE name = 'Зарплаты'\n    )\n);"
+    },
+    {
+        "id": 27,
+        "lab": 2,
+        "title": "Средние расходы по министерствам",
+        "description": "Рассчитывает средние фактические расходы для каждого министерства.",
+        "query": "SELECT \n    m.name AS \"Министерство\", \n    (\n        SELECT AVG(actual_expenses) \n        FROM ministries_budget \n        WHERE ministry_id = m.id\n    ) AS \"Средние расходы\" \nFROM ministries m \nORDER BY m.name;"
+    },
+    {
+        "id": 28,
+        "lab": 2,
+        "title": "Министерства с перерасходом бюджета",
+        "description": "Находит министерства, у которых фактические расходы выше среднего уровня.",
+        "query": "SELECT \n    m.name AS \"Министерство\", \n    AVG(mb.actual_expenses) AS \"Средние расходы\" \nFROM ministries m \nINNER JOIN ministries_budget mb ON m.id = mb.ministry_id \nGROUP BY m.id, m.name \nHAVING AVG(mb.actual_expenses) > (\n    SELECT AVG(actual_expenses) \n    FROM ministries_budget\n) \nORDER BY \"Средние расходы\" DESC;"
+    },
+    {
+        "id": 29,
+        "lab": 2,
+        "title": "Министерства с бюджетными записями",
+        "description": "Проверяет, у каких министерств есть хотя бы одна запись бюджета.",
+        "query": "SELECT * \nFROM ministries m \nWHERE EXISTS (\n    SELECT 1 \n    FROM ministries_budget mb \n    WHERE mb.ministry_id = m.id\n) \nORDER BY m.name;"
+    },
+    {
+        "id": 30,
+        "lab": 2,
+        "title": "Представление бюджетной аналитики",
+        "description": "Получение данных из аналитического представления бюджета.",
+        "query": "SELECT * \nFROM ministry_budget_view \nORDER BY ministry_name, year, month;"
+    },
+    {
+        "id": 31,
+        "lab": 2,
+        "title": "Статистика министерств",
+        "description": "Агрегированная статистика по министерствам и их расходам.",
+        "query": "SELECT * \nFROM ministry_statistics \nORDER BY \"Средние расходы\" DESC NULLS LAST;"
+    },
+    {
+        "id": 32,
+        "lab": 2,
+        "title": "Список представлений",
+        "description": "Показывает все созданные VIEW в базе данных.",
+        "query": "SELECT table_name \nFROM information_schema.views \nWHERE table_schema = 'public' \nORDER BY table_name;"
+    }
+]
