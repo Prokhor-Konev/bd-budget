@@ -63,7 +63,6 @@ export const OlapFilters: React.FC<Props> = ({ onApply, loading }) => {
         setError('');
         setGroupBy(config.defaultGroupBy as GroupByField[]);
 
-        // Очистка полей, которые скрыты
         if (!config.fields.ministries.show) {
             setSelectedMinistries([]);
         }

@@ -30,7 +30,6 @@
     }
 }
 
-// Подсветка синтаксиса
 :global {
 
     .token.comment,
@@ -86,7 +85,6 @@
         color: #e45649;
     }
 
-    // SQL-specific
     .language-sql {
         .token.keyword {
             color: #a626a4;

@@ -1,13 +1,13 @@
 .table {
     flex: 1;
-    overflow: auto; // ✅ СКРОЛЛ ТОЛЬКО ТУТ
+    overflow: auto;
 
     table {
         width: 100%;
         border-collapse: collapse;
 
         thead {
-            position: sticky; // 🔥 фикс заголовка
+            position: sticky;
             top: 0;
             z-index: 2;
         }
